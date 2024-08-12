@@ -1,101 +1,58 @@
 ﻿@model IEnumerable<Aula2407.Models.Cliente>
 
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "BuscarClientes";
     Layout = "~/Views/Shared/_NossoLayout.cshtml";
 }
-<h1 class="display-4 align-content-center">Clientes</h1>
 
+<h1>BuscarClientes</h1>
 
 <p>
-
-    <a class="btn btn-primary" asp-action="CadrastroCliente">Create New</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-             <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
             <th>
-                @Html.DisplayNameFor(model => model.RG)
+                @Html.DisplayNameFor(model => model.NomeCompleto)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CPF)
             </th>
-            @* <th>
-                @Html.DisplayNameFor(model => model.Usuario)
+            <th>
+                @Html.DisplayNameFor(model => model.EMAIL)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Senha)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.CEP)
+                @Html.DisplayNameFor(model => model.Telefone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UF)
+                @Html.DisplayNameFor(model => model.Endereco)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bairro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rua)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Numero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Complemento)
-            </th> *@ 
-            <th></th> 
+            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RG)
+                @Html.DisplayFor(modelItem => item.NomeCompleto)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CPF)
             </td>
-         @*    <td>
-                @Html.DisplayFor(modelItem => item.Usuario)
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Senha)
+                @Html.DisplayFor(modelItem => item.Telefone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CEP)
+                @Html.DisplayFor(modelItem => item.Endereco)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bairro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rua)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Complemento)
-            </td> *@
-            <td>
-                    <a class=" btn btn btn-primary" asp-action="CadrastroCliente" asp-route-id="@item.Id">Alterar</a> |
-                    <a class=" btn btn btn-primary" asp-action="DetalhesClientes" asp-route-id="@item.Id">Detalhes</a> |
-                    <a class=" btn btn btn-primary" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="CadrastroCliente" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

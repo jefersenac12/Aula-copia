@@ -8,9 +8,6 @@ namespace Aula2407.Data
         public AulaContext(DbContextOptions <AulaContext>options) : base(options)
         {
         }
-        public DbSet<Aula2407.Models.Cliente> Clientes { get; set; } = default!;
-        public DbSet<Aula2407.Models.Produtos> Produtos { get; set; } = default!;
-
-   
+        public DbSet<Aula2407.Models.Cliente> Clientes { get; set; } = default!; 
     }
 }
