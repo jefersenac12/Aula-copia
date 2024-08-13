@@ -53,7 +53,7 @@ namespace Aula2407.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> CadrastroCliente([Bind("Id,Nome,RG,CPF,Usuario,Senha,CEP,UF,Cidade,Bairro,Rua,Numero,Completo")] Cliente cliente)
+        public async Task<IActionResult> CadrastroCliente([Bind("Id,NomeCompleto,CPF,Telefone,EMAIL,Endereco")] Cliente cliente)
         {
 
             // verifica se o modelo e valido.
@@ -76,7 +76,7 @@ namespace Aula2407.Controllers
                 return RedirectToAction("BuscarClientes");
             }
             // se o modelo nao for valido retorna a view com os dados do cliente para correçao
-            return View(cliente);
+            return View();
         }
     }
 }
